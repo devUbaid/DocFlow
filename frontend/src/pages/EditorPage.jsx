@@ -99,7 +99,9 @@ export default function EditorPage() {
   const doSave = async (t, c) => {
     setSaving(true);
     try {
-      const res = await apiUpdateDocument(id, { title: t, content: c });
+      const payload = { content: c };
+      if (t && t.trim().length) payload.title = t;
+      const res = await apiUpdateDocument(id, payload);
       setDoc(res.document);
       setSaved(true);
       // record last saved content so subsequent selection-only updates won't trigger saves
