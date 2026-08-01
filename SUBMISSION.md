@@ -25,7 +25,7 @@
 | Architecture note                    | `ARCHITECTURE.md`                         |
 | AI workflow note                     | `AI_WORKFLOW.md`                          |
 | Submission file                      | `SUBMISSION.md` (this file)               |
-| Live frontend URL                    | _[https://doc-flow-one-tawny.vercel.appL]_|
+| Live frontend URL                    | _[https://doc-flow-one-tawny.vercel.app]_|
 | Live backend URL                     | _[https://docflow-sil8.onrender.com]_     |
 | Walkthrough video                    | _[https://www.loom.com/share/adf1fb88473943e48b8f2879508c04a1]_                      |
 | Automated tests                      | `backend/tests/`                          |
