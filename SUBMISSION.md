@@ -1,12 +1,12 @@
 # Submission — DocFlow
 
-**Candidate:** Mohd Ubaid (mohdubaid74933@gmail.com)
+**Candidate:** Mohd Ubaidullah (mohdubaid74933@gmail.com)
 **Role:** Full Stack Product Engineer — Ajaia LLC
 
 ## Live Demo
 
-- **Frontend:** _[Vercel URL here]_
-- **Backend API:** _[Render URL here]_
+- **Frontend:** : https://doc-flow-one-tawny.vercel.app
+- **Backend API:** : https://docflow-sil8.onrender.com
 
 ## Demo Accounts
 
@@ -18,17 +18,17 @@
 
 ## Deliverables Checklist
 
-| Deliverable                          | Location                     |
-| ------------------------------------ | ---------------------------- |
-| Source code                          | This repository              |
-| README with setup instructions       | `README.md`                  |
-| Architecture note                    | `ARCHITECTURE.md`            |
-| AI workflow note                     | `AI_WORKFLOW.md`             |
-| Submission file                      | `SUBMISSION.md` (this file)  |
-| Live frontend URL                    | _[URL]_                      |
-| Live backend URL                     | _[URL]_                      |
-| Walkthrough video                    | _[Loom/YouTube URL]_         |
-| Automated tests                      | `backend/tests/`             |
+| Deliverable                          | Location                                  |
+| ------------------------------------ | ------------------------------------------|
+| Source code                          | This repository                           |
+| README with setup instructions       | `README.md`                               |
+| Architecture note                    | `ARCHITECTURE.md`                         |
+| AI workflow note                     | `AI_WORKFLOW.md`                          |
+| Submission file                      | `SUBMISSION.md` (this file)               |
+| Live frontend URL                    | _[https://doc-flow-one-tawny.vercel.appL]_|
+| Live backend URL                     | _[https://docflow-sil8.onrender.com]_     |
+| Walkthrough video                    | _[https://www.loom.com/share/adf1fb88473943e48b8f2879508c04a1]_                      |
+| Automated tests                      | `backend/tests/`                          |
 
 ## What Is Working
 
