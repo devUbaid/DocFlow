@@ -14,7 +14,8 @@ export default function Toolbar({ editor }) {
     <button
       key={label}
       className={`toolbar__btn ${isActive ? 'toolbar__btn--active' : ''}`}
-      onClick={action}
+      onMouseDown={(e) => { e.preventDefault(); action(); }}
+      onClick={(e) => { e.preventDefault(); /* keep for keyboard/activation accessibility - do not re-run action */ }}
       title={label}
       type="button"
     >

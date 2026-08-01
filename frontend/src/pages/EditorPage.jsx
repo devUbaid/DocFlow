@@ -26,6 +26,10 @@ export default function EditorPage() {
   const [loading, setLoading] = useState(true);
   const saveTimer = useRef(null);
 
+  // keep track of last known content (any editor update) and last saved content
+  const lastKnownContentRef = useRef('');
+  const lastSavedContentRef = useRef('');
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -35,9 +39,17 @@ export default function EditorPage() {
     content: '',
     editable: false,
     onUpdate: ({ editor }) => {
-      scheduleSave(title, editor.getHTML());
+      // Only schedule a save when the document HTML actually changed
+      const html = editor.getHTML();
+      if (html !== lastKnownContentRef.current) {
+        lastKnownContentRef.current = html;
+        if (html !== lastSavedContentRef.current) {
+          scheduleSave(title, html);
+        }
+      }
     },
   });
+
 
   useEffect(() => {
     loadDoc();
@@ -56,6 +68,9 @@ export default function EditorPage() {
       if (editor) {
         editor.commands.setContent(res.document.content || '');
         editor.setEditable(res.permission === 'owner' || res.permission === 'edit');
+        // initialize content refs
+        lastKnownContentRef.current = res.document.content || '';
+        lastSavedContentRef.current = res.document.content || '';
       }
     } catch (e) {
       dispatch(showToast({ type: 'error', message: e.message }));
@@ -87,6 +102,8 @@ export default function EditorPage() {
       const res = await apiUpdateDocument(id, { title: t, content: c });
       setDoc(res.document);
       setSaved(true);
+      // record last saved content so subsequent selection-only updates won't trigger saves
+      lastSavedContentRef.current = res.document.content || '';
       setTimeout(() => setSaved(false), 2000);
     } catch (e) {
       dispatch(showToast({ type: 'error', message: e.message }));
